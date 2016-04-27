@@ -4,7 +4,7 @@ import * as path from 'path';
 import {Server as HttpServer} from 'http';
 import {Server as WsServer} from 'ws';
 import {Product, Review, getProducts, getProductById, getReviewsByProductId} from './model';
-
+ 
 // HTTP API
 
 const app = express();
