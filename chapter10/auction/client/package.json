@@ -8,7 +8,7 @@
     "clean:typings": "rimraf node_modules/angular2/manual_typings",
     "postinstall": "npm run clean:typings && typings install",
     "prebuild": "npm run clean",
-    "build": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached",
+    "build": "webpack --config webpack.test.config.js --progress --profile --colors --display-error-details --display-cached",
     "start": "webpack-dev-server --inline --colors --progress --display-error-details --disaply-modules --display-cached --port 8080",
     "test": "karma start karma.conf.js",
     "predeploy": "npm run build && rimraf ../server/build/public && mkdirp ../server/build/public",
