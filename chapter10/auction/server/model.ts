@@ -1,38 +1,11 @@
 export class Product {
   constructor(
     public id: number,
-    public name: string,
-    public vorname: string,
-    public titel: string,
-    public firma: string,
-    public plz: string,
-    public ort: string,
-    public strasse: string,
-    public hausnummer: string,
-    public strZusatz: string,
-    public stadtteil: string,
-    public telefon: string,
-    public mobil: string,
-    public email: string,
-    public website: string,
-    public kontaktdaten: string,
-    public fachgebiete: string[],
-    public schwerpunkte: string[],
-    public fachlichkeit: string[],
-    public seit: string,
-    public ausbMediat: string[],
-    public praktAusb: string,
-    public ausbQuellberufe: string,
-    public quellberufe: string,
-    public quellSchwerpunkte: string[],
-    public sonstTaetig: string,
-    public branchen: string[],
-    public verbaende: string[],
-    public medien: string[],
-    public beratung: boolean,
-    public gespraech: boolean,
+    public title: string,
+    public price: number,
     public rating: number,
-    public description: string) {}
+    public description: string,
+    public categories: string[]) {}
 }
 
 export class Review {
@@ -48,17 +21,17 @@ export class Review {
 export function getProducts(params = <any>{}): Product[] {
   let result = products;
 
-  if (params.name && result.length > 0) {
+  if (params.title) {
     result = result.filter(
-      p => p.name.toLowerCase().indexOf(params.name.toLowerCase()) !== -1);
+      p => p.title.toLowerCase().indexOf(params.title.toLowerCase()) !== -1);
   }
-  if (params.ort && result.length > 0) {
+  if (parseInt(params.price) && result.length > 0) {
     result = result.filter(
-      p => p.ort.toLowerCase().indexOf(params.ort.toLowerCase()) !== -1);
+      p => p.price <= parseInt(params.price));
   }
-  if (params.plz && result.length > 0) {
+  if (params.category && result.length > 0) {
     result = result.filter(
-      p => p.plz.startsWith(params.plz));
+      p => p.categories.indexOf(params.category.toLowerCase()) !== -1);
   }
 
   return result;
@@ -73,42 +46,48 @@ export function getReviewsByProductId(productId: number): Review[] {
 }
 
 var products = [
+  new Product(0, 'First Product', 24.99, 4.3, 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.', ['electronics', 'hardware']),
   {
-    "id": 0,
-    "name": "Haag",
-    "vorname": "Susanne",
-    "titel": "Juristin",
-    "firma": "",
-    "plz": "50672",
-    "ort": "Köln",
-    "strasse": "Barbarossaplatz",
-    "hausnummer": "1",
-    "strZusatz": "c/o Kanzlei Theus",
-    "stadtteil": "Innenstadt",
-    "telefon": "0221-9615381",
-    "mobil": "0221-9615381",
-    "email": "susanne.haagatgooglemail.com",
-    "website": "www.susanne-haag.de",
-    "kontaktdaten": "",
-    "fachgebiete": ["Familie","Wirtschaft"],
-    "schwerpunkte": ["Scheidungsmediation","Erbschaftsmediation"],
-    "fachlichkeit": ["juristisch"],
-    "seit": "2014-05-20T02:17:00+00:00",
-    "ausbMediat": ["Mediatiorin BM"],
-    "praktAusb": "150-200",
-    "ausbQuellberufe": "Rechtswissenschaft",
-    "quellberufe": "selbständig",
-    "quellSchwerpunkte": ["Familienrecht"],
-    "sonstTaetig": "Klärungshelfer,Konfliktmanagement",
-    "branchen": ["Banken","Industrie"],
-    "verbaende": ["Bundesverband Mediation"],
-    "veroeffentlichungen": [],
-    "medien": ["Telefonmediation"],
-    "beratung": false,
-    "gespraech": true,
+    "id": 1,
+    "title": "Second Product",
+    "price": 64.99,
     "rating": 3.5,
-    "description": ""
-}];
+    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "categories": ["books"]
+  },
+  {
+    "id": 2,
+    "title": "Third Product",
+    "price": 74.99,
+    "rating": 4.2,
+    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "categories": ["electronics"]
+  },
+  {
+    "id": 3,
+    "title": "Fourth Product",
+    "price": 84.99,
+    "rating": 3.9,
+    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "categories": ["hardware"]
+  },
+  {
+    "id": 4,
+    "title": "Fifth Product",
+    "price": 94.99,
+    "rating": 5,
+    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "categories": ["electronics", "hardware"]
+  },
+  {
+    "id": 5,
+    "title": "Sixth Product",
+    "price": 54.99,
+    "rating": 4.6,
+    "description": "This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "categories": ["books"]
+  }
+];
 
 var reviews = [
   {
