@@ -2,6 +2,8 @@ import {EventEmitter, Injectable} from 'angular2/core';
 import {Http, URLSearchParams} from 'angular2/http';
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
+import {AngularFire} from 'angularfire2';
+
 
 export class Product {
   constructor(
@@ -35,17 +37,20 @@ export interface ProductSearchParams {
 export class ProductService {
   searchEvent: EventEmitter<any> = new EventEmitter();
 
-  constructor(private http: Http) {}
+  products: Observable<Product[]>;
+
+  constructor(private http: Http, private af: AngularFire) {
+    this.products = af.database.list('/products');
+  }
 
   search(params: ProductSearchParams): Observable<Product[]> {
     return this.http
-      .get('/api/products', {search: encodeParams(params)})
+      .get('/api/products', {search: encodeParams(params)}) 
       .map(response => response.json());
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get('/api/products')
-      .map(response => response.json());
+    return this.products;
   }
 
   getProductById(productId: number): Observable<Product> {
