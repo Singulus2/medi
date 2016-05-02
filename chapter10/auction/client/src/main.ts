@@ -3,7 +3,7 @@ import {enableProdMode} from 'angular2/core';
 import {FORM_PROVIDERS} from 'angular2/common';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {ROUTER_PROVIDERS} from 'angular2/router';
-import {FIREBASE_PROVIDERS,defaultFirebase, AngularFire} from 'angularfire2';
+import {FIREBASE_PROVIDERS,defaultFirebase, AngularFire, FirebaseRef} from 'angularfire2';
 
 
 if (webpack.ENV === 'production') {
