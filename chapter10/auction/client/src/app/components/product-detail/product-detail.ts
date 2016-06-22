@@ -31,7 +31,7 @@ export default class ProductDetailComponent implements OnDeactivate {
       productService: ProductService,
       private bidService: BidService) {
 
-    const productId = parseInt(params.get('productId'));
+    const productId = params.get('productId');
 
     productService
       .getProductById(productId)

@@ -2,7 +2,11 @@ import {EventEmitter, Injectable} from 'angular2/core';
 import {Http, URLSearchParams} from 'angular2/http';
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
-import {AngularFire} from 'angularfire2';
+
+import {defaultFirebase, AngularFire, FIREBASE_PROVIDERS,
+        FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
+import * as Firebase from 'firebase';
+
 
 
 export class Product {
@@ -12,7 +16,8 @@ export class Product {
     public price: number,
     public rating: number,
     public description: string,
-    public categories: Array<string>) {
+    public categories: Array<string>,
+    public reviews: Array<Review>) {
   }
 }
 
@@ -29,8 +34,8 @@ export class Review {
 
 export interface ProductSearchParams {
   title: string;
-  minPrice: number;
-  maxPrice: number;
+  price: number;
+  category: string;
 }
 
 @Injectable()
@@ -39,31 +44,53 @@ export class ProductService {
 
   products: Observable<Product[]>;
 
+  result: Product[];
+
   constructor(private http: Http, private af: AngularFire) {
     this.products = af.database.list('/products');
   }
 
   search(params: ProductSearchParams): Observable<Product[]> {
     return this.http
-      .get('/api/products', {search: encodeParams(params)}) 
+      .get('/api/products', {search: encodeParams(params)})
       .map(response => response.json());
   }
 
   getProducts(): Observable<Product[]> {
+    //this.products.subscribe(p => this.result = p);
     return this.products;
   }
 
-  getProductById(productId: number): Observable<Product> {
-    return this.http.get(`/api/products/${productId}`)
-      .map(response => response.json());
+  getProductById(productId: string): Observable<Product> {
+    return this.af.database.object(`/products/${productId}`);
   }
 
-  getReviewsForProduct(productId: number): Observable<Review[]> {
-    return this.http
-      .get(`/api/products/${productId}/reviews`)
-      .map(response => response.json())
-      .map(reviews => reviews.map(
-        (r: any) => new Review(r.id, r.productId, new Date(r.timestamp), r.user, r.rating, r.comment)));
+  getProductsBySearch(params = <any>{}): Product[] {
+    if (params.title) {
+      this.result = this.result.filter(
+        p => p.title.toLowerCase().indexOf(params.title.toLowerCase()) !== -1);
+    }
+    if (parseInt(params.price) && this.result.length > 0) {
+      this.result = this.result.filter(
+        p => p.price <= parseInt(params.price));
+    }
+    if (params.category && this.result.length > 0) {
+      this.result = this.result.filter(
+        p => p.categories.indexOf(params.category.toLowerCase()) !== -1);
+    }
+    return this.result;
+  }
+
+ //getProductById(productId: number): any {
+    //return this.products.forEach(next: (value: Product[]) => void, thisArg: any, PromiseCtor?: PromiseConstructor)                                                    //(p => p.id === productId);
+//}
+
+  //getReviewsByProductId(productId: number): Review[] {
+    //return reviews.filter(r => r.productId === productId);
+  //}
+
+  getReviewsForProduct(productId: string): Observable<Review[]> {
+    return this.af.database.list(`/products/${productId}/reviews`);
   }
 
   getAllCategories(): string[] {
