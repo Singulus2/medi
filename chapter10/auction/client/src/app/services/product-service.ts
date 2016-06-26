@@ -19,6 +19,7 @@ export class Product {
     public categories: Array<string>,
     public reviews: Array<Review>) {
   }
+
 }
 
 export class Review {

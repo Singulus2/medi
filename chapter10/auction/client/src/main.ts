@@ -5,7 +5,6 @@ import {HTTP_PROVIDERS} from 'angular2/http';
 import {ROUTER_PROVIDERS} from 'angular2/router';
 import {FIREBASE_PROVIDERS,defaultFirebase, AngularFire, FirebaseRef} from 'angularfire2';
 
-
 if (webpack.ENV === 'production') {
   enableProdMode();
 }

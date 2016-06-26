@@ -1,6 +1,7 @@
 siehe auch Buch Angular 2 mit Typescript S.324
 
-Server-Folder: C:\Users\BerndKirchner\AngularJS\Angular\medi\chapter10\auction\server
+Server-Folder:
+C:\Users\Bernd Kirchner\AngularJS\Angular\medi\chapter10\auction\server
 
 einmalig: npm install
 
@@ -9,7 +10,8 @@ Kompilieren im Server-Folder: tsc
 Starten Server im Server-Folder: npm start
 
 
-Client-Folder C:\Users\BerndKirchner\AngularJS\Angular\medi\chapter10\auction\client
+Client-Folder
+C:\Users\Bernd Kirchner\AngularJS\Angular\medi\chapter10\auction\client
 
 einmalig: npm install
 
