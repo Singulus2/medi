@@ -2,16 +2,18 @@ import {Component} from 'angular2/core';
 import {NgClass, NgFor} from 'angular2/common';
 import {RouteParams, OnDeactivate} from 'angular2/router';
 import {Subscription} from 'rxjs/Subscription';
+import {FormlyForm, FormlyConfig, FormlyMessages, TemplateDirectives, FormlyProviders} from 'ng2-formly';
 
 import {Product, Review, ProductService} from '../../services/product-service';
 import {BidService} from '../../services/bid-service';
 import StarsComponent from '../stars/stars';
+import ProductFormComponent from '../product-form/product-form';
 
 @Component({
   selector: 'auction-product-page',
   styles: ['auction-stars.large {font-size: 24px;}'],
   template: require('./product-detail.html'),
-  directives: [NgClass, NgFor, StarsComponent]
+  directives: [NgClass, NgFor, StarsComponent, ProductFormComponent]
 })
 export default class ProductDetailComponent implements OnDeactivate {
   product: Product;
@@ -47,9 +49,9 @@ export default class ProductDetailComponent implements OnDeactivate {
       .subscribe(
         reviews => this.reviews = reviews,
         error => console.error(error));
-  }
+}
 
-  toggleWatchProduct() {
+toggleWatchProduct() {
     if (this.subscription) {
       this.subscription.unsubscribe();
       this.subscription = null;

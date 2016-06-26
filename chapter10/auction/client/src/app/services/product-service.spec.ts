@@ -37,7 +37,7 @@ describe('ProductService', () => {
       connection.mockRespond(new Response(responseOpts));
     });
 
-    service.getProductById(1).subscribe(p => {
+    service.getProductById("1").subscribe(p => {
       expect(p.id).toBe(1);
       done();
     });
