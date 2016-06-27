@@ -13,7 +13,6 @@ import {Product, Review, ProductService} from '../../services/product-service';
   providers: [ProductService]
 })
 export default class ProductFormComponent {
-  formModel: ControlGroup;
   categories: string[];
   product: Product;
   productService: ProductService;
@@ -25,15 +24,6 @@ export default class ProductFormComponent {
   constructor(productService: ProductService) {
     this.productService = productService;
     this.categories = this.productService.getAllCategories();
-
-    const fb = new FormBuilder();
-    //this.emailsControlArray = fb.array([]);
-    this.formModel = fb.group({
-        'title': [null, Validators.minLength(3)],
-        //'category': [-1],
-        //'emails': this.emailsControlArray,
-        //'email': [-1]
-      })
   }
 
   //addEmail(email: string) {
@@ -47,8 +37,8 @@ export default class ProductFormComponent {
   //}
   save(formValue: any, valid: boolean) {
     if (valid) {
-      console.log(this.formValue);
-      this.productService.srchEvent.emit(this.formValue);
+      console.log(formValue);
+      this.productService.srchEvent.emit(formValue);
   }
 
 
