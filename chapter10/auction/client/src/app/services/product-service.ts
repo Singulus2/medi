@@ -48,11 +48,11 @@ export class ProductService {
   result: Product[];
 
   constructor(private http: Http, private af: AngularFire) {
-    this.sizeSubject = new Subject();
-    this.items = af.database.list('/products', {
+    this.titleSubject = new Subject();
+    this.products = af.database.list('/products', {
       query: {
         orderByChild: 'title',
-        equalTo: this.sizeSubject
+        equalTo: this.titleSubject
       }
     });
   }
