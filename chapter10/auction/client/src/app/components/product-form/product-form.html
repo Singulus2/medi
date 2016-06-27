@@ -35,6 +35,11 @@
     </div>
 
     <div class="form-group">
+      <label for="title">Bild hochladen:</label>
+      <input type="file" [ng-file-select]="options" (onUpload)="handleBasicUpload($event)">
+    </div>
+    
+    <div class="form-group">
     <button type="submit"
             class="btn btn-primary btn-block">Speichern</button>
     </div>
