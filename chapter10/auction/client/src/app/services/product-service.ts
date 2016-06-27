@@ -44,6 +44,7 @@ export class ProductService {
   searchEvent: EventEmitter<any> = new EventEmitter();
   sizeSubject: Subject<any>;
   products: Observable<Product[]>;
+  product: Observable<Product>;
 
   result: Product[];
 
@@ -75,8 +76,20 @@ export class ProductService {
   }
 
   getProductById(productId: string): Observable<Product> {
-    return this.af.database.object(`/products/${productId}`);
+    product =  this.af.database.object(`/products/${productId}`);
+    return product;
   }
+  
+  save(newProduct: Product) {
+    this.item.set(newProduct);
+  }
+  update(newTitle: string) {
+    this.product.update({ title: newTitle });
+  }
+  delete() {
+    this.product.remove();
+  }
+
 
   getProductsBySearch(params = <any>{}): Product[] {
     if (params.title) {
