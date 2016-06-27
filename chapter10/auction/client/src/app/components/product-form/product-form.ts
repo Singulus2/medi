@@ -41,6 +41,10 @@ export default class ProductFormComponent {
       //this.emailsControlArray.controls.push(new Control(email));
   //}
 
+  addPics(pics: FileList) {
+    //this.emails.push(email);
+      //this.emailsControlArray.controls.push(new Control(email));
+  //}
   save() {
     if (this.formModel.valid) {
       console.log(this.formModel.value);
