@@ -63,9 +63,10 @@ export class ProductService {
   
 
   search(params: ProductSearchParams): Observable<Product[]> {
-    return this.http
-      .get('/api/products', {search: encodeParams(params)})
-      .map(response => response.json());
+    filterBy(params.title)
+    //return this.http
+      //.get('/api/products', {search: encodeParams(params)})
+      //.map(response => response.json());
   }
 
   getProducts(): Observable<Product[]> {
