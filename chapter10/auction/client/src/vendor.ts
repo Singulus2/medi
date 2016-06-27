@@ -17,7 +17,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 var firebase = require("firebase/app");
-  //require("firebase/auth");
+  require("firebase/auth");
   require("firebase/database");
   require("firebase/storage");
 
