@@ -83,8 +83,8 @@ export class ProductService {
   save(newProduct: Product) {
     this.product.set(newProduct);
   }
-  update(newTitle: string) {
-    this.product.update({ title: newTitle });
+  update(formValue: any, valid: boolean) {
+    this.product.update({ title: formValue.title });
   }
   delete() {
     this.product.remove();
