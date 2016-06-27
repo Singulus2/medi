@@ -46,9 +46,16 @@ export class ProductService {
   products: Observable<Product[]>;
   product: Observable<Product>;
 
+  config: any  = {
+    apiKey: "AIzaSyAsLRL-2dimMxBp6_DYd7Q-5xy8kU_JVKw",
+    authDomain: "shining-inferno-5332.firebaseapp.com",
+    databaseURL: "https://shining-inferno-5332.firebaseio.com",
+    storageBucket: "shining-inferno-5332.appspot.com",
+  };
+  storageRef: Ref;
   result: Product[];
 
-  constructor(private http: Http, private af: AngularFire) {
+  constructor(private http: Http, private af: AngularFire, private firebase: Firebase) {
     this.titleSubject = new Subject();
     this.products = af.database.list('/products', {
       query: {
@@ -56,6 +63,8 @@ export class ProductService {
         equalTo: this.titleSubject
       }
     });
+    firebase.initializeApp(config);
+    storageRef = firebase.storage().ref();
   }
   
  filterBy(title: string) {
@@ -85,6 +94,7 @@ export class ProductService {
   }
   update(formValue: any, valid: boolean) {
     this.product.update({ title: formValue.title });
+    this.storageRef.child('images/' + product.$key).put(formValue.files);
   }
   delete() {
     this.product.remove();
