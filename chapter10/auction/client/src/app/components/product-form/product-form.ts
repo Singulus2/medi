@@ -45,10 +45,10 @@ export default class ProductFormComponent {
     //this.emails.push(email);
       //this.emailsControlArray.controls.push(new Control(email));
   //}
-  save() {
-    if (this.formModel.valid) {
-      console.log(this.formModel.value);
-      this.productService.searchEvent.emit(this.formModel.value);
+  save(formValue: any, valid: boolean) {
+    if (valid) {
+      console.log(this.formValue);
+      this.productService.srchEvent.emit(this.formValue);
   }
 
 
