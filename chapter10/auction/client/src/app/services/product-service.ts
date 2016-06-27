@@ -81,7 +81,7 @@ export class ProductService {
   }
   
   save(newProduct: Product) {
-    this.item.set(newProduct);
+    this.product.set(newProduct);
   }
   update(newTitle: string) {
     this.product.update({ title: newTitle });
