@@ -1,5 +1,5 @@
 <div class="thumbnail">
-  <form [ngFormModel]="formModel" (ngSubmit)="save()" novalidate>
+  <form #f="ngForm" (ngSubmit)="save(f.value, f.valid)" novalidate>
 
     <div class="form-group"
       [class.has-error]="formModel.hasError('minlength', 'title')">
@@ -36,7 +36,7 @@
 
     <div class="form-group">
       <label for="title">Bild hochladen:</label>
-      <input type="file" (change)="addPic($event.target.files)">
+      <input type="file" ng-control="files" (change)="addPic($event.target.files)">
     </div>
     
     <div class="form-group">
