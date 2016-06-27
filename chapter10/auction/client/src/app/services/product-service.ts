@@ -1,6 +1,7 @@
 import {EventEmitter, Injectable} from 'angular2/core';
 import {Http, URLSearchParams} from 'angular2/http';
 import {Observable} from "rxjs/Observable";
+import { Subject } from 'rxjs/Subject';
 
 import {defaultFirebase, AngularFire, FIREBASE_PROVIDERS,
         FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
@@ -41,14 +42,25 @@ export interface ProductSearchParams {
 @Injectable()
 export class ProductService {
   searchEvent: EventEmitter<any> = new EventEmitter();
-
+  sizeSubject: Subject<any>;
   products: Observable<Product[]>;
 
   result: Product[];
 
   constructor(private http: Http, private af: AngularFire) {
-    this.products = af.database.list('/products');
+    this.sizeSubject = new Subject();
+    this.items = af.database.list('/products', {
+      query: {
+        orderByChild: 'title',
+        equalTo: this.sizeSubject
+      }
+    });
   }
+  
+ filterBy(title: string) {
+    this.sizeSubject.next(title); 
+  }
+  
 
   search(params: ProductSearchParams): Observable<Product[]> {
     return this.http
