@@ -58,7 +58,7 @@ export class ProductService {
   }
   
  filterBy(title: string) {
-    this.sizeSubject.next(title); 
+    this.titleSubject.next(title); 
   }
   
 
