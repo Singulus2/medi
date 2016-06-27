@@ -1,7 +1,6 @@
 import {EventEmitter, Injectable} from 'angular2/core';
 import {Http, URLSearchParams} from 'angular2/http';
 import {Observable} from "rxjs/Observable";
-import 'rxjs/add/operator/map';
 
 import {defaultFirebase, AngularFire, FIREBASE_PROVIDERS,
         FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
