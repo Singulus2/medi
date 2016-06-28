@@ -18,7 +18,7 @@ export default class ProductFormComponent {
   productService: ProductService;
   //emailsControlArray: ControlArray;
   //emails: string[] = [];
-  pics FileList;
+  pics File;
 
 
 
@@ -32,7 +32,7 @@ export default class ProductFormComponent {
       //this.emailsControlArray.controls.push(new Control(email));
   //}
 
-  addPics(pics: FileList) {
+  addPics(pics: File) {
     this.pics = pics;
   }
   
