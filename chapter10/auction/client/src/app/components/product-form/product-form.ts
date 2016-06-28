@@ -18,7 +18,7 @@ export default class ProductFormComponent {
   productService: ProductService;
   //emailsControlArray: ControlArray;
   //emails: string[] = [];
-  filesToUpload: Array<File>;
+  //filesToUpload: Array<File>;
   pics File;
 
 
