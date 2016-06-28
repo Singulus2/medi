@@ -2,7 +2,7 @@
   <form #f="ngForm" (ngSubmit)="update(f.value, f.valid)" novalidate>
 
     <div class="form-group"
-      [class.has-error]="formModel.hasError('minlength', 'title')">
+      [class.has-error]="f.form.hasError('minlength', 'title')">
       <label for="title">Product title:</label>
       <input id="title"
       placeholder="Title"
@@ -10,14 +10,17 @@
       type="text"
       ng-control="title"
       minlength="3">
+      <span [hidden]="!f.form.hasError('required', 'titlt')">
+         title is required
+      </span>    
       <span class="help-block"
-        [class.hidden]="!formModel.hasError('minlength', 'title')">
-        Type at least 3 characters
+        [class.hidden]="!f.form.hasError('minlength', 'title')">
+         Type at least 3 characters
       </span>
     </div>
 
     <div class="form-group"
-      [class.has-error]="formModel.hasError('minlength', 'title')">
+      [class.has-error]="f.form.hasError('minlength', 'title')">
       <label for="title">Categories:</label>
       <ng-select [allowClear]="true"
                   [items]="categories"
@@ -29,7 +32,7 @@
                   placeholder="No city selected">
       </ng-select>
       <span class="help-block"
-          [class.hidden]="!formModel.hasError('minlength', 'title')">
+          [class.hidden]="!f.form.hasError('minlength', 'title')">
           Type at least 3 characters
       </span>
     </div>
