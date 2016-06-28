@@ -18,6 +18,7 @@ export default class ProductFormComponent {
   productService: ProductService;
   //emailsControlArray: ControlArray;
   //emails: string[] = [];
+  pics FileList;
 
 
 
@@ -32,9 +33,9 @@ export default class ProductFormComponent {
   //}
 
   addPics(pics: FileList) {
-    //this.emails.push(email);
-      //this.emailsControlArray.controls.push(new Control(email));
-  //}
+    this.pics = pics;
+  }
+  
   save(formValue: any, valid: boolean) {
     if (valid) {
       console.log(formValue);
