@@ -35,11 +35,11 @@ export default class HomeComponent {
   constructor(private productService: ProductService) {
     this.products = this.productService.getProducts();
 
-    this.productService.searchEvent
-      .subscribe(
-        params => this.products = this.productService.search(params),
-        console.error.bind(console),
-        () => console.log('DONE')
-      );
+    // this.productService.searchEvent
+    //   .subscribe(
+    //     params => this.products = this.productService.search(params),
+    //     console.error.bind(console),
+    //     () => console.log('DONE')
+    //   );
   }
 }

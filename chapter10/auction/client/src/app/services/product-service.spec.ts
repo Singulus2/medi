@@ -3,7 +3,7 @@ import {
   inject,
   beforeEach,
   beforeEachProviders
-} from '@angular/testing';
+} from 'angular2/testing';
 
 import {provide} from '@angular/core';
 import {Http, BaseRequestOptions, Response, ResponseOptions} from '@angular/http'

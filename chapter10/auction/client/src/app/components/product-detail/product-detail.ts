@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {NgClass, NgFor} from '@angular/common';
-import {RouteParams, OnDeactivate} from '@angular/router';
+import {RouteParams, OnDeactivate} from 'angular2/router';
 import {Subscription} from 'rxjs/Subscription';
-import {FormlyForm, FormlyConfig, FormlyMessages, TemplateDirectives, FormlyProviders} from 'ng2-formly';
 
 import {Product, Review, ProductService} from '../../services/product-service';
 import {BidService} from '../../services/bid-service';

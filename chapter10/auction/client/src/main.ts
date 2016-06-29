@@ -1,8 +1,8 @@
-import {bootstrap} from '@angular/platform/browser';
+import {bootstrap} from 'angular2/platform/browser';
 import {enableProdMode} from '@angular/core';
 import {FORM_PROVIDERS} from '@angular/common';
 import {HTTP_PROVIDERS} from '@angular/http';
-import {ROUTER_PROVIDERS} from '@angular/router';
+import {ROUTER_PROVIDERS} from 'angular2/router';
 import {FIREBASE_PROVIDERS,defaultFirebase, AngularFire, FirebaseRef} from 'angularfire2';
 
 if (webpack.ENV === 'production') {

@@ -51,10 +51,11 @@ export class ProductService {
 
   constructor(private http: Http, private af: AngularFire, private firebase: Firebase) {
     this.titleSubject = new Subject();
+
     this.products = af.database.list('/products', {
       query: {
         orderByChild: 'title',
-        equalTo: this.titleSubject 
+        equalTo: this.titleSubject
       }
     });
 
@@ -67,7 +68,8 @@ export class ProductService {
 
 
   search(params: ProductSearchParams): void {
-    this.filterBy(params.title)
+    this.filterBy(params.title);
+    
     //return this.http
       //.get('/api/products', {search: encodeParams(params)})
       //.map(response => response.json());

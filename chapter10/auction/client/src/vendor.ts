@@ -1,8 +1,8 @@
 // Polyfills
-import '@angular/bundles/@angular-polyfills';
+import 'angular2/bundles/angular2-polyfills';
 
 // Angular modules
-import '@angular/platform/browser';
+import 'angular2/platform/browser';
 import '@angular/http';
 import '@angular/router';
 import 'angularfire2';

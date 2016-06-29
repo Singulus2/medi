@@ -2,14 +2,13 @@ import {Component} from '@angular/core';
 import {NgClass, NgFor,
   Control, ControlGroup, ControlArray, Validators, FormBuilder,
   CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
-import {SELECT_DIRECTIVES} from 'ng2-select/ng2-select';
 
 import {Product, Review, ProductService} from '../../services/product-service';
 
 @Component({
   selector: 'product-form',
   template: require('./product-form.html'),
-  directives: [NgClass, NgFor, SELECT_DIRECTIVES],
+  directives: [NgClass, NgFor],
   providers: [ProductService]
 })
 export default class ProductFormComponent {
@@ -19,7 +18,7 @@ export default class ProductFormComponent {
   //emailsControlArray: ControlArray;
   //emails: string[] = [];
   //filesToUpload: Array<File>;
-  pics File;
+  pics: File;
 
 
 
@@ -40,7 +39,7 @@ export default class ProductFormComponent {
   save(formValue: any, valid: boolean) {
     if (valid) {
       console.log(formValue);
-      this.productService.srchEvent.emit(formValue);
+      this.productService.searchEvent.emit(formValue);
   }
 
 
