@@ -29,7 +29,7 @@ module.exports = {
       {test: /\.html$/, loader: 'raw'},
       {test: /\.ts$/,   loader: 'ts', query: {compilerOptions: {noEmit: false}}}
     ],
-    noParse: [path.join(__dirname, 'node_modules', 'angular2', 'bundles')]
+    noParse: [path.join(__dirname, 'node_modules', '@angular', 'bundles')]
   },
   output: {
     path    : './dist',

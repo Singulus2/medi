@@ -1,7 +1,7 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {NgClass, NgFor,
   Control, ControlGroup, ControlArray, Validators, FormBuilder,
-  CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/common';
+  CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 import {SELECT_DIRECTIVES} from 'ng2-select/ng2-select';
 
 import {Product, Review, ProductService} from '../../services/product-service';
@@ -36,7 +36,7 @@ export default class ProductFormComponent {
   addPics(pics: File) {
     this.pics = pics;
   }
-  
+
   save(formValue: any, valid: boolean) {
     if (valid) {
       console.log(formValue);

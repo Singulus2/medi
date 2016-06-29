@@ -3,11 +3,11 @@ import {
   inject,
   beforeEach,
   beforeEachProviders
-} from 'angular2/testing';
+} from '@angular/testing';
 
-import {provide} from 'angular2/core';
-import {Http, BaseRequestOptions, Response, ResponseOptions} from 'angular2/http'
-import {MockBackend, MockConnection} from 'angular2/http/testing'
+import {provide} from '@angular/core';
+import {Http, BaseRequestOptions, Response, ResponseOptions} from '@angular/http'
+import {MockBackend, MockConnection} from '@angular/http/testing'
 
 import {ProductService} from './product-service';
 

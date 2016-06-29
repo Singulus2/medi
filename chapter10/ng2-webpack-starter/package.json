@@ -15,7 +15,7 @@
     "test": "karma start karma.conf.js"
   },
   "dependencies": {
-    "angular2": "2.0.0-beta.13",
+    "@angular": "2.0.0-beta.13",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",

@@ -4,7 +4,7 @@ import {
   beforeEach,
   beforeEachProviders,
   TestComponentBuilder,
-} from 'angular2/testing';
+} from '@angular/testing';
 
 // Component to test
 import StarsComponent from './stars';

@@ -1,6 +1,6 @@
-import {Component} from 'angular2/core';
-import {NgClass, NgFor} from 'angular2/common';
-import {RouteParams, OnDeactivate} from 'angular2/router';
+import {Component} from '@angular/core';
+import {NgClass, NgFor} from '@angular/common';
+import {RouteParams, OnDeactivate} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {FormlyForm, FormlyConfig, FormlyMessages, TemplateDirectives, FormlyProviders} from 'ng2-formly';
 

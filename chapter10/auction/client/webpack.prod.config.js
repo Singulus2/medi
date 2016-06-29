@@ -37,7 +37,7 @@ module.exports = {
       {test: /\.svg$/,   loader: "url?limit=10000&minetype=image/svg+xml"},
       {test: /\.eot$/,   loader: "file"}
     ],
-    noParse: [path.join(__dirname, 'node_modules', 'angular2', 'bundles')]
+    noParse: [path.join(__dirname, 'node_modules', '@angular', 'bundles')]
   },
   output: {
     path    : './dist',

@@ -4,7 +4,7 @@ This is Table of Contents.
 
 The book is https://manning.com/books/angular-2-development-with-typescript[here].
 
-The code samples are https://github.com/Farata/angular2typescript[here].
+The code samples are https://github.com/Farata/@angulartypescript[here].
 
 == Chapter 1. Introducing Angular 2
 === 1.1. A Sampler of JavaScript Frameworks and Libraries

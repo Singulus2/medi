@@ -1,5 +1,5 @@
-import {EventEmitter, Injectable} from 'angular2/core';
-import {Http, URLSearchParams} from 'angular2/http';
+import {EventEmitter, Injectable} from '@angular/core';
+import {Http, URLSearchParams} from '@angular/http';
 import {Observable} from "rxjs/Observable";
 import { Subject } from 'rxjs/Subject';
 
@@ -42,18 +42,12 @@ export interface ProductSearchParams {
 @Injectable()
 export class ProductService {
   searchEvent: EventEmitter<any> = new EventEmitter();
-  sizeSubject: Subject<any>;
-  products: Observable<Product[]>;
-  product: Observable<Product>;
-
-  config: any  = {
-    apiKey: "AIzaSyAsLRL-2dimMxBp6_DYd7Q-5xy8kU_JVKw",
-    authDomain: "shining-inferno-5332.firebaseapp.com",
-    databaseURL: "https://shining-inferno-5332.firebaseio.com",
-    storageBucket: "shining-inferno-5332.appspot.com",
-  };
-  storageRef: Ref;
-  result: Product[];
+  titleSubject: Subject<any>;
+  products: FirebaseListObservable<Product[]>;
+  product: FirebaseObjectObservable<Product>;
+  storageRef: any;
+  result: Product[]; 
+  resultProduct: Product;
 
   constructor(private http: Http, private af: AngularFire, private firebase: Firebase) {
     this.titleSubject = new Subject();
@@ -63,17 +57,17 @@ export class ProductService {
         equalTo: this.titleSubject
       }
     });
-    firebase.initializeApp(config);
-    storageRef = firebase.storage().ref();
-  }
-  
- filterBy(title: string) {
-    this.titleSubject.next(title); 
-  }
-  
 
-  search(params: ProductSearchParams): Observable<Product[]> {
-    filterBy(params.title)
+    this.storageRef = firebase.root().ref();
+  }
+
+ filterBy(title: string) {
+    this.titleSubject.next(title);
+  }
+
+
+  search(params: ProductSearchParams): void {
+    this.filterBy(params.title)
     //return this.http
       //.get('/api/products', {search: encodeParams(params)})
       //.map(response => response.json());
@@ -85,16 +79,17 @@ export class ProductService {
   }
 
   getProductById(productId: string): Observable<Product> {
-    product =  this.af.database.object(`/products/${productId}`);
-    return product;
+    this.product = this.af.database.object(`/products/${productId}`);
+    this.product.subscribe(p => this.resultProduct = p);
+    return this.product;
   }
-  
-  save(newProduct: Product) {
-    this.product.set(newProduct);
+
+  save(newProduct: Observable<Product>) {
+    //this.product = newProduct;
   }
   update(formValue: any, valid: boolean) {
     this.product.update({ title: formValue.title });
-    this.storageRef.child('images/' + product.$key).put(formValue.files);
+    this.storageRef.child('images/' + this.resultProduct.id).put(formValue.files);
   }
   delete() {
     this.product.remove();

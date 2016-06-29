@@ -1,10 +1,10 @@
 // Polyfills
-import 'angular2/bundles/angular2-polyfills';
+import '@angular/bundles/@angular-polyfills';
 
 // Angular modules
-import 'angular2/platform/browser';
-import 'angular2/http';
-import 'angular2/router';
+import '@angular/platform/browser';
+import '@angular/http';
+import '@angular/router';
 import 'angularfire2';
 import 'firebase';
 

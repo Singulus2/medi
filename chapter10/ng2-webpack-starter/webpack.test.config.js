@@ -21,7 +21,7 @@ module.exports = {
       {test: /\.html$/, loader: 'raw'},
       {test: /\.ts$/,   loader: 'ts', query: {compilerOptions: {noEmit: false}}}
     ],
-    noParse: [path.join(__dirname, 'node_modules', 'angular2', 'bundles')]
+    noParse: [path.join(__dirname, 'node_modules', '@angular', 'bundles')]
   },
   plugins: [
     new DefinePlugin({'webpack': {'ENV': JSON.stringify(metadata.env)}})
