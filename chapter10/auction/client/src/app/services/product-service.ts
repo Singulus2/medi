@@ -46,7 +46,7 @@ export class ProductService {
   products: FirebaseListObservable<Product[]>;
   product: FirebaseObjectObservable<Product>;
   storageRef: any;
-  result: Product[]; 
+  result: Product[];
   resultProduct: Product;
 
   constructor(private http: Http, private af: AngularFire, private firebase: Firebase) {
@@ -54,7 +54,7 @@ export class ProductService {
     this.products = af.database.list('/products', {
       query: {
         orderByChild: 'title',
-        equalTo: this.titleSubject
+        equalTo: this.titleSubject 
       }
     });
 
