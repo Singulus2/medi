@@ -3,6 +3,8 @@ import {NgClass, NgFor,
   Control, ControlGroup, ControlArray, Validators, FormBuilder,
   CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 
+import {MultiSelect} from 'primeng/primeng';
+
 import {Product, Review, ProductService} from '../../services/product-service';
 
 @Component({
@@ -13,6 +15,7 @@ import {Product, Review, ProductService} from '../../services/product-service';
 })
 export default class ProductFormComponent {
   categories: string[];
+  selectedCategories: string[];
   product: Product;
   productService: ProductService;
   //emailsControlArray: ControlArray;
@@ -44,34 +47,6 @@ export default class ProductFormComponent {
 
 
 }
-private value:any = {};
-  private _disabledV:string = '0';
-  private disabled:boolean = false;
-
-  private get disabledV():string {
-    return this._disabledV;
-  }
-
-  private set disabledV(value:string) {
-    this._disabledV = value;
-    this.disabled = this._disabledV === '1';
-  }
-
-  public selected(value:any):void {
-    console.log('Selected value is: ', value);
-  }
-
-  public removed(value:any):void {
-    console.log('Removed value is: ', value);
-  }
-
-  public typed(value:any):void {
-    console.log('New search input: ', value);
-  }
-
-  public refreshValue(value:any):void {
-    this.value = value;
-  }
 }
 
 function positiveNumberValidator(control: Control): any {
