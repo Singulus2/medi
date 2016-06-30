@@ -23,7 +23,7 @@
     <div class="form-group"
       [class.has-error]="f.form.hasError('minlength', 'title')">
       <label for="title">Categories:</label>
-      
+      <p-multiSelect [options]="categories" [(ngModel)]="selectedCategories"></p-multiSelect>
       <span class="help-block"
           [class.hidden]="!f.form.hasError('minlength', 'title')">
           Type at least 3 characters
