@@ -127,7 +127,10 @@ export class ProductService {
   }
 
   getAllCategories(): string[] {
-    return ['Books', 'Electronics', 'Hardware'];
+    return [{label:'Books', value:'Books'},
+            {label:'Electronics', value:'Electronics'},
+            {label:'Hardware', value:'Hardware'};
+           ];
   }
 }
 
