@@ -14,7 +14,7 @@ import {Product, Review, ProductService} from '../../services/product-service';
   providers: [ProductService]
 })
 export default class ProductFormComponent {
-  categories: string[];
+  categories: SelectItem[];
   selectedCategories: string[];
   product: Product;
   productService: ProductService;
