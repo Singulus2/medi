@@ -5,8 +5,10 @@ import { Subject } from 'rxjs/Subject';
 
 import {defaultFirebase, AngularFire, FIREBASE_PROVIDERS,
         FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
-import * as Firebase from 'firebase';
+//import * as Firebase from 'firebase';
 
+
+import {MultiSelect} from 'primeng/primeng';
 
 
 export class Product {
@@ -49,8 +51,7 @@ export class ProductService {
   result: Product[];
   resultProduct: Product;
 
-  constructor(private http: Http, private af: AngularFire, private firebase: Firebase) {
-    this.titleSubject = new Subject();
+  constructor(private http: Http, private af: AngularFire) {
 
     this.products = af.database.list('/products', {
       query: {
@@ -58,22 +59,22 @@ export class ProductService {
         equalTo: this.titleSubject
       }
     });
-
-    this.storageRef = firebase.root().ref();
+    this.titleSubject = new Subject();
   }
-
- filterBy(title: string) {
-    this.titleSubject.next(title);
-  }
-
 
   search(params: ProductSearchParams): void {
     this.filterBy(params.title);
-    
+
     //return this.http
       //.get('/api/products', {search: encodeParams(params)})
       //.map(response => response.json());
   }
+
+
+   filterBy(title: string) {
+      this.titleSubject.next(title);
+    }
+
 
   getProducts(): Observable<Product[]> {
     //this.products.subscribe(p => this.result = p);
@@ -91,7 +92,7 @@ export class ProductService {
   }
   update(formValue: any, valid: boolean) {
     this.product.update({ title: formValue.title });
-    this.storageRef.child('images/' + this.resultProduct.id).put(formValue.files);
+    //this.ref.child('images/' + this.resultProduct.id).put(formValue.files);
   }
   delete() {
     this.product.remove();
@@ -124,12 +125,12 @@ export class ProductService {
 
   getReviewsForProduct(productId: string): Observable<Review[]> {
     return this.af.database.list(`/products/${productId}/reviews`);
-  }
+  } 
 
-  getAllCategories(): string[] {
+  getAllCategories(): any[] {
     return [{label:'Books', value:'Books'},
             {label:'Electronics', value:'Electronics'},
-            {label:'Hardware', value:'Hardware'};
+            {label:'Hardware', value:'Hardware'}
            ];
   }
 }

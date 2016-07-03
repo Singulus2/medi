@@ -7,10 +7,10 @@ import {Component} from '@angular/core';
 export default class CarouselComponent {
 
   prev() {
-    $('.carousel').carousel('prev');
+    //$('.carousel').carousel('prev');
   }
 
   next() {
-    $('.carousel').carousel('next');
+    //$('.carousel').carousel('next');
   }
 }

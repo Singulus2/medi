@@ -14,14 +14,14 @@ import {Product, Review, ProductService} from '../../services/product-service';
   providers: [ProductService]
 })
 export default class ProductFormComponent {
-  categories: SelectItem[];
+  categories: any[];
   selectedCategories: string[];
   product: Product;
   productService: ProductService;
   //emailsControlArray: ControlArray;
   //emails: string[] = [];
   //filesToUpload: Array<File>;
-  pics: File;
+  pics: File; 
 
 
 

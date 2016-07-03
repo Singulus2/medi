@@ -20,6 +20,12 @@ Kompilieren: npm build (in package json evtl --config webpack.test.config.js spe
 Starten Server im Client-Folder: npm start
 
 URL im Browser zum Starten der Anwendung
+
 http://localhost:8080
 
 Was ist mit npm deploy?
+
+npm install -g typings
+typings init
+typings install
+typings install dt~es6-shim --global --save
