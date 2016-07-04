@@ -95,6 +95,21 @@
           <span [hidden]="!f.form.hasError('required', 'email')">EMail is required</span>
           <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'email')">Type at least 3 characters</span>
         </div>
+        
+        <div class="form-group">
+          <label for="beschreibung">Beschreibung:</label>
+          <textarea pInputTextarea [(ngModel)]="beschreibung" autoResize="autoResize"/>
+        </div>
+         
+        <div class="form-group"">
+          <label for="beratung">Beratung:</label>
+          <p-checkbox [(ngModel)]="beratung"></p-checkbox> 
+        </div>
+         
+        <div class="form-group"">
+          <label for="gespraech">Gespräch:</label>
+          <p-checkbox [(ngModel)]="gespraech"></p-checkbox> 
+        </div>
          
         <div class="form-group"
           [class.has-error]="f.form.hasError('minlength', 'website')">
