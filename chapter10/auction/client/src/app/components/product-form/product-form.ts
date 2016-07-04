@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
-import {NgClass, NgFor,
-  Control, ControlGroup, ControlArray, Validators, FormBuilder,
-  CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
+import {NgClass, NgFor,Control, ControlGroup, ControlArray, Validators, FormBuilder,CORE_DIRECTIVES, FORM_DIRECTIVES} from '@angular/common';
 
-import {MultiSelect} from 'primeng/primeng';
+import {MultiSelect,TabView,TabPanel} from 'primeng/primeng';
 
 import {Product, Review, ProductService} from '../../services/product-service';
 
