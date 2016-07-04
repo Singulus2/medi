@@ -6,40 +6,8 @@ import { Subject } from 'rxjs/Subject';
 import {defaultFirebase, AngularFire, FIREBASE_PROVIDERS,
         FirebaseListObservable,FirebaseObjectObservable} from 'angularfire2';
 //import * as Firebase from 'firebase';
-
-
 import {MultiSelect} from 'primeng/primeng';
 
-
-export class Product {
-  constructor(
-    public id: number,
-    public title: string,
-    public price: number,
-    public rating: number,
-    public description: string,
-    public categories: Array<string>,
-    public reviews: Array<Review>) {
-  }
-
-}
-
-export class Review {
-  constructor(
-    public id: number,
-    public productId: number,
-    public timestamp: Date,
-    public user: string,
-    public rating: number,
-    public comment: string) {
-  }
-}
-
-export interface ProductSearchParams {
-  title: string;
-  price: number;
-  category: string;
-}
 
 @Injectable()
 export class ProductService {
@@ -133,6 +101,74 @@ export class ProductService {
             {label:'Hardware', value:'Hardware'}
            ];
   }
+}
+
+export class Product {
+  constructor(
+    public id: number,
+    public title: string,
+    public price: number,
+    public rating: number,
+    public description: string,
+    public categories: Array<string>,
+    public reviews: Array<Review>) {
+  }
+
+}
+
+export class Review {
+  constructor(
+    public id: number,
+    public productId: number,
+    public timestamp: Date,
+    public user: string,
+    public rating: number,
+    public comment: string) {
+  }
+}
+
+export interface ProductSearchParams {
+  title: string;
+  price: number;
+  category: string;
+}
+
+export class User {
+  constructor(
+    public name: string,
+    public vorname: string,
+    public titel: string,
+    public firma: string,
+    public plz: string,
+    public ort: string,
+    public strasse: string,
+    public hausnummer: string,
+    public strZusatz: string,
+    public stadtteil: string,
+    public telefon: string,
+    public mobil: string,
+    public email: string,
+    public website: string,
+    public kontaktdaten: string,
+    public fachgebiete: string[],
+    public schwerpunkte: string[],
+    public fachlichkeit: string[],
+    public seit: string,
+    public ausbMediat: string[],
+    public praktAusb: string[],
+    public ausbQuellberufe: string[],
+    public quellberufe: string[],
+    public quellSchwerpunkte: string[],
+    public sonstTaetig: string[],
+    public branchen: string[],
+    public verbaende: string[],
+    public medien: string[],
+    public beratung: boolean,
+    public gespraech: boolean,
+    public rating: number,
+    public reviews: Array<Review>) {
+  }
+
 }
 
 /**
