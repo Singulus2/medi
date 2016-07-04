@@ -10,6 +10,29 @@
           <span [hidden]="!f.form.hasError('required', 'title')">title is required</span>
           <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'title')">Type at least 3 characters</span>
         </div>
+        
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'title')">
+          <label for="name">Name:</label>
+          <input id="name" placeholder="Name" class="form-control" type="text" ng-control="name" required minlength="3">
+          <span [hidden]="!f.form.hasError('required', 'name')">name is required</span>
+          <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'name')">Type at least 3 characters</span>
+        </div>
+        
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'title')">
+          <label for="vorname">Vorname:</label>
+          <input id="vorname" placeholder="Vorname" class="form-control" type="text" ng-control="vorname" required minlength="3">
+          <span [hidden]="!f.form.hasError('required', 'vorname')">vorname is required</span>
+          <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'vorname')">Type at least 3 characters</span>
+        </div>
+        
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'titel')">
+          <label for="titel">Titel:</label>
+          <input id="titel" placeholder="Titel" class="form-control" type="text" ng-control="titel">
+        </div>
+
 
         <div class="form-group"
           [class.has-error]="f.form.hasError('minlength', 'title')">
