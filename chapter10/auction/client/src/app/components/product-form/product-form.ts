@@ -42,9 +42,41 @@ export default class ProductFormComponent {
       console.log(formValue);
       this.productService.searchEvent.emit(formValue);
   }
-
-
 }
+
+    public id: number;
+    public name: string;
+    public vorname: string;
+    public titel: string;
+    public firma: string;
+    public plz: string;
+    public ort: string;
+    public strasse: string;
+    public hausnummer: string;
+    public strZusatz: string;
+    public stadtteil: string;
+    public telefon: string;
+    public mobil: string;
+    public email: string;
+    public website: string;
+    public kontaktdaten: string;
+    public fachgebiete: string[];
+    public schwerpunkte: string[];
+    public fachlichkeit: string[];
+    public seit: date;
+    public ausbMediat: string[];
+    public praktAusb: string;
+    public ausbQuellberufe: string;
+    public quellberufe: string;
+    public quellSchwerpunkte: string[];
+    public sonstTaetig: string;
+    public branchen: string[];
+    public verbaende: string[];
+    public medien: string[];
+    public beschreibung string;
+    public beratung: boolean;
+    public gespraech: boolean;
+
 }
 
 function positiveNumberValidator(control: Control): any {
