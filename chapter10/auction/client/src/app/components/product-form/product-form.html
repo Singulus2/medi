@@ -117,8 +117,47 @@
           <input type="file" ng-control="files" (change)="addPic($event.target.files[0])">
         </div>
       </p-tabPanel>
-      <p-tabPanel header="Fachgebiete">
-        Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows.
+      
+      <p-tabPanel header="Qualifikationen">
+        <div class="form-group">
+          <label for="fachgebiete">Fachgebiete:</label>
+          <p-multiSelect [options]="fachgebiete" [(ngModel)]="selectedFachgebiete"></p-multiSelect>
+        </div>
+        <div class="form-group">
+          <label for="schwerpunkte">Schwerpunkte:</label>
+          <p-multiSelect [options]="schwerpunkte" [(ngModel)]="selectedSchwerpunkte"></p-multiSelect>
+        </div>
+        <div class="form-group">
+          <label for="ausbMediat">Ausbildung Mediation:</label>
+          <p-multiSelect [options]="ausbMediat" [(ngModel)]="selectedAusbMediat"></p-multiSelect>
+        </div>
+        <div class="form-group">
+          <label for="seit">Mediator seit:</label>
+          <p-calendar [(ngModel)]="seit" dateFormat="yyyy.mm.dd"></p-calendar>
+        </div>
+        <div class="form-group">
+          <label for="quellberufe">Ursprungsberuf:</label>
+          <p-multiSelect [options]="quellberufe" [(ngModel)]="selectedQuellberufe"></p-multiSelect>
+        </div>
+        <div class="form-group">
+          <label for="ausbQuellberufe">Ausbildung Ursprungsberuf:</label>
+          <p-multiSelect [options]="ausbQuellberufe" [(ngModel)]="selectedAusbQuellberufe"></p-multiSelect>
+        </div>
+        <div class="form-group">
+          <label for="branchen">Branchen:</label>
+          <p-multiSelect [options]="branchen" [(ngModel)]="selectedBranchen"></p-multiSelect>
+        </div>
+        <div class="form-group">
+          <label for="verbaende">Verbände:</label>
+          <p-multiSelect [options]="verbaende" [(ngModel)]="selectedVerbaende"></p-multiSelect>
+        </div>
+        <div class="form-group">
+          <label for="medien">Medien:</label>
+          <p-multiSelect [options]="medien" [(ngModel)]="selectedMedien"></p-multiSelect>
+        </div>
+
+
+
       </p-tabPanel>
     </p-tabView>
 
