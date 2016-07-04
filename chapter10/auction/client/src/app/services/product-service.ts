@@ -135,6 +135,7 @@ export interface ProductSearchParams {
 
 export class User {
   constructor(
+    public id: number,
     public name: string,
     public vorname: string,
     public titel: string,
@@ -153,7 +154,7 @@ export class User {
     public fachgebiete: string[],
     public schwerpunkte: string[],
     public fachlichkeit: string[],
-    public seit: string,
+    public seit: date,
     public ausbMediat: string[],
     public praktAusb: string[],
     public ausbQuellberufe: string[],
