@@ -20,7 +20,7 @@
         </div>
         
         <div class="form-group"
-          [class.has-error]="f.form.hasError('minlength', 'title')">
+          [class.has-error]="f.form.hasError('minlength', 'vorname')">
           <label for="vorname">Vorname:</label>
           <input id="vorname" placeholder="Vorname" class="form-control" type="text" ng-control="vorname" required minlength="3">
           <span [hidden]="!f.form.hasError('required', 'vorname')">vorname is required</span>
@@ -31,6 +31,77 @@
           [class.has-error]="f.form.hasError('minlength', 'titel')">
           <label for="titel">Titel:</label>
           <input id="titel" placeholder="Titel" class="form-control" type="text" ng-control="titel">
+        </div>
+        
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'plz')">
+          <label for="plz">PLZ:</label>
+          <input id="plz" placeholder="PLZ" class="form-control" type="text" ng-control="plz" required minlength="5">
+          <span [hidden]="!f.form.hasError('required', 'plz')">PLZ is required</span>
+          <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'plz')">Type at least 5 characters</span>
+        </div>
+         
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'ort')">
+          <label for="ort">Ort:</label>
+          <input id="ort" placeholder="Ort" class="form-control" type="text" ng-control="ort" required minlength="3">
+          <span [hidden]="!f.form.hasError('required', 'ort')">Ort is required</span>
+          <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'ort')">Type at least 3 characters</span>
+        </div>
+         
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'strasse')">
+          <label for="strasse">Strasse:</label>
+          <input id="strasse" placeholder="Strasse" class="form-control" type="text" ng-control="strasse" required minlength="3">
+          <span [hidden]="!f.form.hasError('required', 'strasse')">Strasse is required</span>
+          <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'strasse')">Type at least 3 characters</span>
+        </div>
+         
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'hausnummer')">
+          <label for="hausnummer">Hausnummer:</label>
+          <input id="hausnummer" placeholder="Hausnummer" class="form-control" type="text" ng-control="hausnummer" required minlength="3">
+          <span [hidden]="!f.form.hasError('required', 'hausnummer')">Hausnummer is required</span>
+        </div>
+         
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'stadtteil')">
+          <label for="stadtteil">Stadtteil:</label>
+          <input id="stadtteil" placeholder="Stadtteil" class="form-control" type="text" ng-control="stadtteil" required minlength="3">
+          <span [hidden]="!f.form.hasError('required', 'stadtteil')">Stadtteil is required</span>
+          <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'stadtteil')">Type at least 3 characters</span>
+        </div>
+         
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'telefon')">
+          <label for="telefon">Telefon:</label>
+          <input id="telefon" placeholder="Telefon" class="form-control" type="text" ng-control="telefon" required minlength="3">
+          <span [hidden]="!f.form.hasError('required', 'telefon')">Telefon is required</span>
+          <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'stadtteil')">Telefon at least 3 characters</span>
+        </div>
+         
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'mobil')">
+          <label for="mobil">Mobil:</label>
+          <input id="mobil" placeholder="Mobil" class="form-control" type="text" ng-control="mobil" required minlength="3">
+          <span [hidden]="!f.form.hasError('required', 'mobil')">Mobil is required</span>
+          <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'mobil')">Type at least 3 characters</span>
+        </div>
+
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'email')">
+          <label for="email">Email:</label>
+          <input id="email" placeholder="EMail" class="form-control" type="text" ng-control="email" required minlength="3">
+          <span [hidden]="!f.form.hasError('required', 'email')">EMail is required</span>
+          <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'email')">Type at least 3 characters</span>
+        </div>
+         
+        <div class="form-group"
+          [class.has-error]="f.form.hasError('minlength', 'website')">
+          <label for="website">Website:</label>
+          <input id="website" placeholder="Website" class="form-control" type="text" ng-control="website" required minlength="3">
+          <span [hidden]="!f.form.hasError('required', 'website')">Website is required</span>
+          <span class="help-block" [class.hidden]="!f.form.hasError('minlength', 'website')">Type at least 3 characters</span>
         </div>
 
 
