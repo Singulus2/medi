@@ -62,30 +62,27 @@ export class ProductService {
     user.titel        = formValue.titel;
     user.plz          = formValue.plz; 
     user.ort          = formValue.ort;
-    user.strasse      = formValue.ort
+    user.strasse      = formValue.strasse;
     user.hausnummer   = formValue.hausnummer;
-    public strZusatz: string,
-    public stadtteil: string,
-    public telefon: string,
-    public mobil: string,
-    public email: string,
-    public website: string,
-    public kontaktdaten: string,
-    public fachgebiete: string[],
-    public schwerpunkte: string[],
-    public fachlichkeit: string[],
-    public seit: string,
-    public ausbMediat: string[],
-    public praktAusb: string[],
-    public ausbQuellberufe: string[],
-    public quellberufe: string[],
-    public quellSchwerpunkte: string[],
-    public sonstTaetig: string[],
-    public branchen: string[],
-    public verbaende: string[],
-    public medien: string[],
-    public beratung: boolean,
-    public gespraech: boolean,
+    user.stadtteil    = formValue.stadtteil;
+    user.telefon      = formValue.telefon;
+    user.mobil        = formValue.mobil;  
+    user.email        = formValue.email;
+    user.website      = formValue.website;
+    user.fachgebiete  = formValue.fachgebiete;
+    user.schwerpunkte = formValue.schwerpunkte;
+    user.fachlichkeit = formValue.schwerpunkte;
+    user.seit         = formValue.seit;
+    user.ausbMediat   = formValue.ausbMediat;
+    user.ausbQuellberufe   = formValue.ausbQuellberufe;
+    user.quellberufe       = formValue.quellberufe;
+    user.quellSchwerpunkte = formValue.quellSchwerpunkte;
+    user.sonstTaetig       = formValue.sonstTaetig;
+    user.branchen          = formValue.branchen,
+    user.verbaende         = formValue.verbaende;
+    user.medien            = formValue.verbaende;
+    user.beratung          = formValue.beratung;
+    user.gespraech         = formValue.gespraech;
 
     this.product.update(user);
   }
