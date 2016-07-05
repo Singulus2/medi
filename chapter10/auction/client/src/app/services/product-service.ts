@@ -18,6 +18,7 @@ export class ProductService {
   storageRef: any;
   result: Product[];
   resultProduct: Product;
+  user: User;
 
   constructor(private http: Http, private af: AngularFire) {
 
@@ -55,13 +56,45 @@ export class ProductService {
     return this.product;
   }
 
-  save(newProduct: Observable<Product>) {
-    //this.product = newProduct;
+  save(formValue: any) {
+    user.name         = formValue.name;
+    user.vorname      = formValue.vorname;
+    user.titel        = formValue.titel;
+    user.plz          = formValue.plz; 
+    user.ort          = formValue.ort;
+    user.strasse      = formValue.ort
+    user.hausnummer   = formValue.hausnummer;
+    public strZusatz: string,
+    public stadtteil: string,
+    public telefon: string,
+    public mobil: string,
+    public email: string,
+    public website: string,
+    public kontaktdaten: string,
+    public fachgebiete: string[],
+    public schwerpunkte: string[],
+    public fachlichkeit: string[],
+    public seit: string,
+    public ausbMediat: string[],
+    public praktAusb: string[],
+    public ausbQuellberufe: string[],
+    public quellberufe: string[],
+    public quellSchwerpunkte: string[],
+    public sonstTaetig: string[],
+    public branchen: string[],
+    public verbaende: string[],
+    public medien: string[],
+    public beratung: boolean,
+    public gespraech: boolean,
+
+    this.product.update(user);
   }
+  
   update(formValue: any, valid: boolean) {
     this.product.update({ title: formValue.title });
     //this.ref.child('images/' + this.resultProduct.id).put(formValue.files);
   }
+  
   delete() {
     this.product.remove();
   }
