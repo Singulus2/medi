@@ -40,7 +40,8 @@ export default class ProductFormComponent {
   save(formValue: any, valid: boolean) {
     if (valid) {
       console.log(formValue);
-      this.productService.searchEvent.emit(formValue);
+      //this.productService.searchEvent.emit(formValue);
+      this.productService.update(formValue);
   }
 }
 
