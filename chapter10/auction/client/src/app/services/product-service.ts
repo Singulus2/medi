@@ -154,7 +154,7 @@ export class User {
     public fachgebiete: string[],
     public schwerpunkte: string[],
     public fachlichkeit: string[],
-    public seit: date,
+    public seit: string,
     public ausbMediat: string[],
     public praktAusb: string[],
     public ausbQuellberufe: string[],
