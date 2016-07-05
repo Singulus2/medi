@@ -136,15 +136,15 @@
       <p-tabPanel header="Qualifikationen">
         <div class="form-group">
           <label for="fachgebiete">Fachgebiete:</label>
-          <p-multiSelect [options]="fachgebiete" [(ngModel)]="selectedFachgebiete"></p-multiSelect>
+          <p-multiSelect [options]="optFachgebiete" [(ngModel)]="fachgebiete"></p-multiSelect>
         </div>
         <div class="form-group">
           <label for="schwerpunkte">Schwerpunkte:</label>
-          <p-multiSelect [options]="schwerpunkte" [(ngModel)]="selectedSchwerpunkte"></p-multiSelect>
+          <p-multiSelect [options]="optSchwerpunkte" [(ngModel)]="schwerpunkte"></p-multiSelect>
         </div>
         <div class="form-group">
           <label for="ausbMediat">Ausbildung Mediation:</label>
-          <p-multiSelect [options]="ausbMediat" [(ngModel)]="selectedAusbMediat"></p-multiSelect>
+          <p-multiSelect [options]="optAusbMediat" [(ngModel)]="ausbMediat"></p-multiSelect>
         </div>
         <div class="form-group">
           <label for="seit">Mediator seit:</label>
@@ -152,23 +152,23 @@
         </div>
         <div class="form-group">
           <label for="quellberufe">Ursprungsberuf:</label>
-          <p-multiSelect [options]="quellberufe" [(ngModel)]="selectedQuellberufe"></p-multiSelect>
+          <p-multiSelect [options]="optQuellberufe" [(ngModel)]="quellberufe"></p-multiSelect>
         </div>
         <div class="form-group">
           <label for="ausbQuellberufe">Ausbildung Ursprungsberuf:</label>
-          <p-multiSelect [options]="ausbQuellberufe" [(ngModel)]="selectedAusbQuellberufe"></p-multiSelect>
+          <p-multiSelect [options]="optAusbQuellberufe" [(ngModel)]="ausbQuellberufe"></p-multiSelect>
         </div>
         <div class="form-group">
           <label for="branchen">Branchen:</label>
-          <p-multiSelect [options]="branchen" [(ngModel)]="selectedBranchen"></p-multiSelect>
+          <p-multiSelect [options]="optBranchen" [(ngModel)]="branchen"></p-multiSelect>
         </div>
         <div class="form-group">
           <label for="verbaende">Verbände:</label>
-          <p-multiSelect [options]="verbaende" [(ngModel)]="selectedVerbaende"></p-multiSelect>
+          <p-multiSelect [options]="optVerbaende" [(ngModel)]="verbaende"></p-multiSelect>
         </div>
         <div class="form-group">
           <label for="medien">Medien:</label>
-          <p-multiSelect [options]="medien" [(ngModel)]="selectedMedien"></p-multiSelect>
+          <p-multiSelect [options]="optMedien" [(ngModel)]="medien"></p-multiSelect>
         </div>
 
 
