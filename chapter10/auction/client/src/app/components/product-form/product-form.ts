@@ -77,17 +77,50 @@ export default class ProductFormComponent {
     public beratung: boolean;
     public gespraech: boolean;
 
-    public optFachgebiete: string[];
-    public optSchwerpunkte: string[];
-    public optFachlichkeit: string[];
-    public optAusbMediat: string[];
-    public optAusbQuellberufe: string[];
-    public optquellberufe: string[];
-    public quellSchwerpunkte: string[];
-    public sonstTaetig: string;
-    public branchen: string[];
-    public verbaende: string[];
-    public medien: string[];
+    public optFachgebiete: string[] = [{label:'Familie', value:'Familie'},
+                                        {label:'Wirtschaft', value:'Wirtschaft'},
+                                        {label:'Sonstiges', value:'Sonstiges'}
+                                      ];
+    public optSchwerpunkte: string[] = [{label:'Baumediation', value:'Baumediation'},
+                                        {label:'Scheidungsmediation', value:'Scheidungsmediation'},
+                                        {label:'Erbschaftsmediation', value:'Erbschaftsmediation'}
+                                      ];
+    public optFachlichkeit: string[] = [{label:'juristisch', value:'juristisch'},
+                                        {label:'kaufmännisch', value:'kaufmännisch'},
+                                        {label:'künstlerisch', value:'künstlerisch'}
+                                      ];
+    public optAusbMediat: string[] = [{label:'Zertifikat Mediator', value:'Zertifikat Mediator'},
+                                        {label:'Zertifikat Mediationssupervisor', value:'Zertifikat Mediationssupervisor'},
+                                        {label:'Master of Mediation', value:'Master of Mediation'}
+                                      ];
+    public optAusbQuellberufe: string[] = [{label:'Ingenieur', value:'Ingenieur'},
+                                        {label:'Sozialwissenschaften', value:'Sozialwissenschaften'},
+                                        {label:'Jura', value:'Jura'}
+                                      ];
+    public optQuellberufe: string[] = [{label:'Angestellter', value:'Angestellter'},
+                                        {label:'selbständig', value:'selbständig'},
+                                        {label:'Jurist', value:'Jurist'}
+                                      ];
+    public optQuellSchwerpunkte: string[] = [{label:'Arbeitsrecht', value:'Arbeitsrecht'},
+                                        {label:'Familienrecht', value:'Familienrecht'},
+                                        {label:'Erbrecht', value:'Erbrecht'}
+                                      ];
+    public optSonstTaetig: string[] = [{label:'Cooperative Praxis', value:'Cooperative Praxis'},
+                                        {label:'Konfliktmoderator', value:'Konfliktmoderator'},
+                                        {label:'Ombudsmann', value:'Ombudsmann'}
+                                      ];
+    public optBranchen: string[] = [{label:'Banken', value:'Banken'},
+                                        {label:'Industrie', value:'Industrie'},
+                                        {label:'Versicherung', value:'Versicherung'}
+                                      ];
+    public optVerbaende: string[] = [{label:'DAV Mediation', value:'DAV Mediation'},
+                                        {label:'Deutsches Forum für Mediation', value:'Deutsches Forum für Mediation'},
+                                        {label:'Deutsche Gesellschaft für Mediation', value:'Deutsche Gesellschaft für Mediation'}
+                                      ];
+    public optMedien: string[] = [{label:'Telefonmediation', value:'Telefonmediation'},
+                                        {label:'Onlinemediation', value:'Onlinemediation'},
+                                        {label:'Skype', value:'Skype'}
+                                      ];
 
 }
 
