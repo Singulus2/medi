@@ -63,19 +63,31 @@ export default class ProductFormComponent {
     public fachgebiete: string[];
     public schwerpunkte: string[];
     public fachlichkeit: string[];
-    public seit: date;
+    public seit: string;
     public ausbMediat: string[];
     public praktAusb: string;
-    public ausbQuellberufe: string;
-    public quellberufe: string;
+    public ausbQuellberufe: string[];
+    public quellberufe: string[];
     public quellSchwerpunkte: string[];
     public sonstTaetig: string;
     public branchen: string[];
     public verbaende: string[];
     public medien: string[];
-    public beschreibung string;
+    public beschreibung: string;
     public beratung: boolean;
     public gespraech: boolean;
+
+    public optFachgebiete: string[];
+    public optSchwerpunkte: string[];
+    public optFachlichkeit: string[];
+    public optAusbMediat: string[];
+    public optAusbQuellberufe: string[];
+    public optquellberufe: string[];
+    public quellSchwerpunkte: string[];
+    public sonstTaetig: string;
+    public branchen: string[];
+    public verbaende: string[];
+    public medien: string[];
 
 }
 
